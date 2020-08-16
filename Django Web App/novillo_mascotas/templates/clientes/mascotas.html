@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% load static %}
+{% block body %}
+
+<div class="body">
+    <div class="table-responsive">
+
+        <table class="table table-hover dashboard-task-infos">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Tipo de mascota</th>
+                    <th>Altura</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mascota in listaMascotas %}
+                <tr>
+                    <td>{{mascota.nombre}}</td>
+                    <td>{{mascota.raza}}</td>
+                    <td>{{mascota.tipo}}</td>
+                    <td>{{mascota.altura}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

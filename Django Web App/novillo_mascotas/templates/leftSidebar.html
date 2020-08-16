@@ -1,0 +1,79 @@
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar">
+  <!-- User Info -->
+  
+  {% load static %}
+  {% if user.is_authenticated%}
+  <div class="user-info">
+    <div class="image">
+      <img src="{% static 'images/user.png'%}" width="48" height="48" alt="User" />
+    </div>
+    <div class="info-container">
+
+      <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.first_name}}
+        {{user.last_name}}</div>
+      <div class="email">{{user.email}}</div>
+    </div>
+  </div>
+  {% endif %}
+  </div>
+  <!-- #User Info -->
+  <!-- Menu -->
+
+  <div class="menu">
+    <ul class="list">
+      <li class="header">MAIN NAVIGATION</li>
+      {% if not user.is_authenticated%}
+      <li>
+        <a href="{% url 'autenticar' %}">
+          <i class="material-icons">login</i><span>Ingresar</span></a>
+      </li>
+      {% endif %}
+      <li class="active">
+        <a href="{% url 'index' %}">
+          <i class="material-icons">home</i>
+          <span>Inicio</span>
+        </a>
+      </li>
+
+      <li>
+        {% if user.is_authenticated%}
+        <a href="javascript:void(0);" class="menu-toggle">
+          <i class="material-icons">widgets</i>
+          <span>Personal</span>
+        </a>
+        <ul class="ml-menu">
+          {%for grupo in grupos%}
+          <li>
+            <a href="javascript:void(0);">
+              <span>{{grupo}}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif%}
+      </li>
+
+    
+      <li class="header">Turnos</li>
+      <li>
+        <a href="{% url 'turnos' %}">
+          <i class="material-icons col-red">donut_large</i>
+          <span>Revisar turnos</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- #Menu -->
+  <!-- Footer -->
+  <div class="legal">
+    <div class="copyright">
+      &copy; 2020 <a href="javascript:void(0);">Refugio Animal Novillo</a>.
+    </div>
+    <div class="version">
+      <b>Version: </b> 1
+    </div>
+  </div>
+  <!-- #Footer -->
+</aside>
+<!-- #END# Left Sidebar -->

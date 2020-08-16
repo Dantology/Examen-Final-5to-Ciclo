@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% load static %}
+{% block body %}
+<a href="{% url 'crear_cliente' %}">Nuevo Cliente</a>
+
+
+
+
+<div class="body">
+    <div class="table-responsive">
+
+      <table class="table table-hover dashboard-task-infos">
+        <thead>
+          <tr>
+            <th>Cedula</th>
+            <th>Apellidos</th>
+            <th>Nombres</th>
+            <th>Celular</th>
+            <th>Mascota</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for cliente in listaCliente %}
+          <tr>
+            <td>{{cliente.cedula}}</td>
+            <td>{{cliente.apellidos}}</td>
+            <td>{{cliente.nombres}}</td>
+            <td>{{cliente.celular}}</td>
+            <td><span class="button-a"><a href="{% url 'mascotas'%}">Mascota</a></span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

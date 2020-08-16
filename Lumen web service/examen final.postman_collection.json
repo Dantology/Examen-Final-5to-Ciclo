@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "2721d1c4-3da7-4649-a402-6e1070092e0a",
+		"name": "examen final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api_token",
+						"value": "pbkdf2_sha256$180000$nV9Swr0x35QD$SRO07xi1xi5YsdiBDbGcYas4v99/ZNnLutwsh/IU3wI=",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/usuarios/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"usuarios",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Danto\",\r\n    \"password\":\"12345\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/usuarios/ingresar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"usuarios",
+						"ingresar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/usuarios/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"usuarios",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api_token",
+						"value": "Qz90hY5aqyM9aGQCHzsYUVznyzP6Mjrup8mXgF24e8TclVJIDxny9QXhZx4c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": \"1124\",\r\n    \"nombres\": \"Giovanny\",\r\n    \"apellidos\": \"Giorgio\",\r\n    \"email\":\"giovanny@gmail.com\",\r\n    \"celular\": \"099969592\"\r\n               \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/cliente/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cliente",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMascotas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api_token",
+						"value": "Qz90hY5aqyM9aGQCHzsYUVznyzP6Mjrup8mXgF24e8TclVJIDxny9QXhZx4c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/cliente/mascotas/11123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cliente",
+						"mascotas",
+						"11123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createMascota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api_token",
+						"value": "Qz90hY5aqyM9aGQCHzsYUVznyzP6Mjrup8mXgF24e8TclVJIDxny9QXhZx4c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": \"1124\",\r\n    \"nombre\": \"Pepe\",\r\n    \"raza\": \"pequeña\",\r\n    \"altura\":\"1.8\",\r\n    \"tipo\":\"grillo\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/mascotas/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"mascotas",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTurno",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api_token",
+						"type": "text",
+						"value": "Qz90hY5aqyM9aGQCHzsYUVznyzP6Mjrup8mXgF24e8TclVJIDxny9QXhZx4c"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": \"1124\",\r\n    \"descripcion\": \"Ponerle yeso en una patita\",\r\n    \"responsable\": \"1\",\r\n    \"fecha\": \"2020-08-15 21:58:46.680826\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/turnos/solicitar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"turnos",
+						"solicitar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMascotas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api_token",
+						"type": "text",
+						"value": "Qz90hY5aqyM9aGQCHzsYUVznyzP6Mjrup8mXgF24e8TclVJIDxny9QXhZx4c"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/mascotas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"mascotas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTurnos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

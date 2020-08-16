@@ -1,0 +1,2 @@
+Ingeniero muy bune día, este readme es para pedirle si pudiera realizar las pruebas con postman, 
+la exportación está en esta misma carpeta, gracias!

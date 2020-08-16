@@ -1,0 +1,71 @@
+<div class="block-header">
+  <h2>Página Principal</h2>
+</div>
+{% load static %}
+
+
+<div class="row clearfix">
+  <!-- Task Info -->
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="card">
+      <div class="header">
+        <h2>Usuarios</h2>
+        <ul class="header-dropdown m-r--5">
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="{% url 'usuarios'%}">Listar Usuarios</a></li>
+              <li><a href="{% url 'registrar' %}">Agregar Usuarios</a></li>
+              <li><a href="javascript:void(0);">Eliminar Usuarios</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- #END# Task Info -->
+
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="card">
+      <div class="header">
+        <h2>Clientes</h2>
+        <ul class="header-dropdown m-r--5">
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="{% url 'clientes'%}">Listar Clientes</a></li>
+              <li><a href="{% url 'crear_cliente' %}">Agregar Clientes</a></li>
+              <li><a href="javascript:void(0);">Eliminar Clientes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Browser Usage -->
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="card">
+      <div class="header">
+        <h2>Turnos</h2>
+        <ul class="header-dropdown m-r--5">
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="{% url 'turnos' %}">Listar Turnos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- #END# Browser Usage -->
+</div>

@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% load static %}
+{% block body %}
+<a href="{% url 'registrar' %}">Nuevo Usuario</a>
+
+<div class="body">
+    <div class="table-responsive">
+
+      <table class="table table-hover dashboard-task-infos">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for usuario in listaUsuarios %}
+          <tr>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.first_name}}</td>
+            <td>{{usuario.last_name}}</td>
+            <td>{{usuario.email}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

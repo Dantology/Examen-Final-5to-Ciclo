@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+<section class="content">
+    <div class="container-fluid">
+        <section class="content">
+            {% block body %}
+            <div class="container-fluid">
+                <h3 class="tile-title">Turnos de Cliente</h3>
+                <!-- Basic Validation -->
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="body table-responsive">
+                                <form method="GET">
+
+                                    <div class="form-group">
+                                        <label for="input-1">Buscar por Cédula de cliente</label>
+                                        <input type="text" name="cedula" class="form-control col-md-3" 
+                                            placeholder="Cédula">
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-success">Buscar</button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            {% if cliente %}
+                            <div class="tile">
+                                <h4 class="tile-title">{{cliente.apellidos|upper}} {{cliente.nombres|upper}} -
+                                    {{cliente.cedula}}</h3>
+                            </div>
+
+                            <h3>Mascotas: </h3>
+                           
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Raza</th>
+                                            <th>Tipo de mascota</th>
+                                            <th>Altura</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for mascota in mascotas %}
+                                        <tr>
+                                            <td>{{mascota.nombre}}</td>
+                                            <td>{{mascota.raza}}</td>
+                                            <td>{{mascota.tipo}}</td>
+                                            <td>{{mascota.altura}}</td>
+                                            <td>
+                                                <a href="{% url 'solicitud' cliente.cedula mascota.nombre %}"
+                                                    class="btn btn-success">Solicitar
+                                                    Turno</a>
+                                            </td>
+
+                                        </tr>
+                                        {% endfor %}
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endblock%}
+        </section>
+    </div>
+</section>
